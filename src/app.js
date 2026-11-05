@@ -57,7 +57,19 @@ app.use('/api/v1/uploads', express.static(uploadDir));
 // Rate Limiter
 app.use('/api/v1', apiLimiter);
 
-// Health Check
+// Root & Health Check Endpoints
+app.get(['/', '/health', '/api/v1'], (req, res) => {
+  return successResponse(res, {
+    service: 'RTConnect REST API',
+    status: 'ONLINE',
+    version: '1.0.0',
+    endpointsPrefix: '/api/v1',
+    healthCheck: '/api/v1/health',
+    documentation: 'https://github.com/anditaurban/RTConnectAPI#readme',
+    message: 'Selamat datang di RTConnect REST API. Seluruh endpoint aplikasi menggunakan prefix /api/v1.',
+  });
+});
+
 app.get('/api/v1/health', (req, res) => {
   return successResponse(res, {
     status: 'OK',
