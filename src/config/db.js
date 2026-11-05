@@ -6,6 +6,7 @@ dotenv.config();
 const poolConfig = process.env.DATABASE_URL
   ? {
       uri: process.env.DATABASE_URL,
+      database: process.env.DB_NAME || 'rtconnect_db',
       waitForConnections: true,
       connectionLimit: 15,
       queueLimit: 0,

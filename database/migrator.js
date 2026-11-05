@@ -22,6 +22,7 @@ function getConnectionConfig() {
   if (process.env.DATABASE_URL) {
     return {
       uri: process.env.DATABASE_URL,
+      database: process.env.DB_NAME || 'rtconnect_db',
       multipleStatements: true,
       charset: 'utf8mb4',
     };
