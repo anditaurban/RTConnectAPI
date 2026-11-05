@@ -1,0 +1,37 @@
+{
+  "name": "rtconnect-api",
+  "version": "1.0.0",
+  "description": "REST API Backend untuk RTConnect — Sistem Pengelolaan Administrasi RT/RW",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node tests/api.test.js",
+    "migrate": "node database/migrator.js",
+    "migrate:status": "node database/migrator.js status",
+    "migrate:create": "node database/migrator.js create",
+    "seed:passwords": "node database/seed-passwords.js"
+  },
+  "keywords": [
+    "rtconnect",
+    "express",
+    "mysql",
+    "rest-api"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.12.0",
+    "uuid": "^11.1.0"
+  }
+}
+
